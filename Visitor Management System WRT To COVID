@@ -1,0 +1,87 @@
+import java.util.Scanner;
+
+class Employee
+{
+	String name;
+	int eNo;
+	
+	Employee(String name , int eNo)
+	{
+		this.name = name;
+		this.eNo = eNo;
+	}
+	void display()
+	{
+		System.out.println(this.name);
+		System.out.println(this.eNo);
+	}
+	void temp(int temp)
+	{
+		if(temp > 100)
+		{
+			System.out.println("Symptoms of COVID. Entry prohibited");
+		}
+		else
+		{
+			System.out.println("You are welcome!");
+		}
+	}
+}
+class Visitor
+{
+	String name;
+	int appointmentNo;
+Visitor (String name , int appointmentNo)
+{
+	this.name = name;
+	this.appointmentNo = appointmentNo;
+}
+void display()
+{
+	System.out.println(this.name);
+	System.out.println(this.appointmentNo);
+}
+void temp(int temp)
+{
+	if(temp > 100)
+	{
+		System.out.println("Symptoms of COVID. Entry prohibited");
+	}
+	else
+	{
+		System.out.println("You are welcome!");
+	}
+}
+}
+public class Company {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Press E for Employee and V for Visitor:");
+		char userInput = s.next().charAt(0);
+		if(userInput == 'E')
+		{
+			System.out.println("Enter Employee name:");
+			String st = s.next();
+			System.out.println("Enter Employee no:");
+			int n = s.nextInt();
+			System.out.println("Temp Recorded:");
+			int t = s.nextInt();
+			Employee e = new Employee(st , n);
+			e.display();
+			e.temp(t);
+		}
+		if(userInput == 'V')
+		{
+			System.out.println("Enter visitor name:");
+			String str = s.next();
+			System.out.println("Enter Appointment No:");
+			int a = s.nextInt();
+			System.out.println("Temp Recorded:");
+			int t = s.nextInt();
+			Visitor v = new Visitor(str , a);
+			v.display();
+			v.temp(t);
+		}
+	}
+}
